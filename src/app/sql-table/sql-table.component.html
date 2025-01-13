@@ -1,0 +1,43 @@
+<hr>
+<h2>Clich Here to Get the Address saved in SQl Table</h2>
+
+<div *ngIf="loading" class="loader-overlay">
+  <mat-spinner [diameter]="30"></mat-spinner>
+</div>
+
+<button mat-raised-button color="primary" (click)="updateAddresses()">
+  Update Addresses 
+</button> ||
+
+<button mat-raised-button color="primary" (click)="getSqlData()">
+  Get SQL Data 
+</button> 
+
+<!-- <div class="update-address-container">
+    <button (click)="updateAddresses()" class="btn btn-primary">Update Addresses Boot</button>
+  </div> -->
+
+
+  <div class="updated-data-container" *ngIf="updatedData.length > 0">
+    <h3>Updated Address Data</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+          <th>Full Address</th>
+          <th>Updated Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of updatedData">
+          <td>{{ row.ID }}</td>
+          <td>{{ row.Latitude }}</td>
+          <td>{{ row.Longitude }}</td>
+          <td>{{ row.FullAddress }}</td>
+          <td>{{ row.UpdatedDate | date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
