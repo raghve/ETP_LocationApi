@@ -1,0 +1,90 @@
+1/16/2025, 12:44:16 PM - Error for AttendanceRegisterID: 
+      SELECT TOP(500) E.CardNumber, E.EmployeeID, AR.AttendanceRegisterID,
+             dbo.fn_ConvertDateTime(AR.AttendanceDate, 1) AS AttendanceDate,
+             'DeviceLogs_' + CAST(MONTH(AR.AttendanceDate) AS VARCHAR(2)) + '_' + CAST(YEAR(AR.AttendanceDate) AS VARCHAR(4)) AS DataTable,
+             dbo.fn_ConvertDateTime(AR.InTime, 3) AS InTime,
+             dbo.fn_ConvertDateTime(AR.OutTime, 3) AS OutTime,
+             ISNULL(AP.InTimeSource, 0) AS InTimeSource,
+             ISNULL(AP.OutTimeSource, 0) AS OutTimeSource
+      FROM Time.AttendanceRegister AR
+      INNER JOIN Time.AttendancePunchDetails AP ON AR.AttendanceRegisterID = AP.AttendanceRegisterID
+      INNER JOIN Emp.Employee E ON AR.EmployeeID = E.EmployeeID
+      WHERE AR.InterfaceProcess = 0
+        AND (AR.InTime IS NOT NULL OR AR.OutTime IS NOT NULL)
+        AND (ISNULL(AP.InTimeSource, 0) = 1 OR ISNULL(AP.OutTimeSource, 0) = 1)
+    
+1/16/2025, 12:51:15 PM - Error for AttendanceRegisterID: 
+      SELECT TOP(500) E.CardNumber, E.EmployeeID, AR.AttendanceRegisterID,
+             dbo.fn_ConvertDateTime(AR.AttendanceDate, 1) AS AttendanceDate,
+             'DeviceLogs_' + CAST(MONTH(AR.AttendanceDate) AS VARCHAR(2)) + '_' + CAST(YEAR(AR.AttendanceDate) AS VARCHAR(4)) AS DataTable,
+             dbo.fn_ConvertDateTime(AR.InTime, 3) AS InTime,
+             dbo.fn_ConvertDateTime(AR.OutTime, 3) AS OutTime,
+             ISNULL(AP.InTimeSource, 0) AS InTimeSource,
+             ISNULL(AP.OutTimeSource, 0) AS OutTimeSource
+      FROM Time.AttendanceRegister AR
+      INNER JOIN Time.AttendancePunchDetails AP ON AR.AttendanceRegisterID = AP.AttendanceRegisterID
+      INNER JOIN Emp.Employee E ON AR.EmployeeID = E.EmployeeID
+      WHERE AR.InterfaceProcess = 0
+        AND (AR.InTime IS NOT NULL OR AR.OutTime IS NOT NULL)
+        AND (ISNULL(AP.InTimeSource, 0) = 1 OR ISNULL(AP.OutTimeSource, 0) = 1)
+    
+1/16/2025, 12:52:15 PM - Error for AttendanceRegisterID: 
+      SELECT TOP(500) E.CardNumber, E.EmployeeID, AR.AttendanceRegisterID,
+             dbo.fn_ConvertDateTime(AR.AttendanceDate, 1) AS AttendanceDate,
+             'DeviceLogs_' + CAST(MONTH(AR.AttendanceDate) AS VARCHAR(2)) + '_' + CAST(YEAR(AR.AttendanceDate) AS VARCHAR(4)) AS DataTable,
+             dbo.fn_ConvertDateTime(AR.InTime, 3) AS InTime,
+             dbo.fn_ConvertDateTime(AR.OutTime, 3) AS OutTime,
+             ISNULL(AP.InTimeSource, 0) AS InTimeSource,
+             ISNULL(AP.OutTimeSource, 0) AS OutTimeSource
+      FROM Time.AttendanceRegister AR
+      INNER JOIN Time.AttendancePunchDetails AP ON AR.AttendanceRegisterID = AP.AttendanceRegisterID
+      INNER JOIN Emp.Employee E ON AR.EmployeeID = E.EmployeeID
+      WHERE AR.InterfaceProcess = 0
+        AND (AR.InTime IS NOT NULL OR AR.OutTime IS NOT NULL)
+        AND (ISNULL(AP.InTimeSource, 0) = 1 OR ISNULL(AP.OutTimeSource, 0) = 1)
+    
+1/16/2025, 2:59:15 PM - Error for AttendanceRegisterID: 
+      SELECT TOP(500) E.CardNumber, E.EmployeeID, AR.AttendanceRegisterID,
+             dbo.fn_ConvertDateTime(AR.AttendanceDate, 1) AS AttendanceDate,
+             'DeviceLogs_' + CAST(MONTH(AR.AttendanceDate) AS VARCHAR(2)) + '_' + CAST(YEAR(AR.AttendanceDate) AS VARCHAR(4)) AS DataTable,
+             dbo.fn_ConvertDateTime(AR.InTime, 3) AS InTime,
+             dbo.fn_ConvertDateTime(AR.OutTime, 3) AS OutTime,
+             ISNULL(AP.InTimeSource, 0) AS InTimeSource,
+             ISNULL(AP.OutTimeSource, 0) AS OutTimeSource
+      FROM Time.AttendanceRegister AR
+      INNER JOIN Time.AttendancePunchDetails AP ON AR.AttendanceRegisterID = AP.AttendanceRegisterID
+      INNER JOIN Emp.Employee E ON AR.EmployeeID = E.EmployeeID
+      WHERE AR.InterfaceProcess = 0
+        AND (AR.InTime IS NOT NULL OR AR.OutTime IS NOT NULL)
+        AND (ISNULL(AP.InTimeSource, 0) = 1 OR ISNULL(AP.OutTimeSource, 0) = 1)
+    
+1/16/2025, 3:00:15 PM - Error for AttendanceRegisterID: 
+      SELECT TOP(500) E.CardNumber, E.EmployeeID, AR.AttendanceRegisterID,
+             dbo.fn_ConvertDateTime(AR.AttendanceDate, 1) AS AttendanceDate,
+             'DeviceLogs_' + CAST(MONTH(AR.AttendanceDate) AS VARCHAR(2)) + '_' + CAST(YEAR(AR.AttendanceDate) AS VARCHAR(4)) AS DataTable,
+             dbo.fn_ConvertDateTime(AR.InTime, 3) AS InTime,
+             dbo.fn_ConvertDateTime(AR.OutTime, 3) AS OutTime,
+             ISNULL(AP.InTimeSource, 0) AS InTimeSource,
+             ISNULL(AP.OutTimeSource, 0) AS OutTimeSource
+      FROM Time.AttendanceRegister AR
+      INNER JOIN Time.AttendancePunchDetails AP ON AR.AttendanceRegisterID = AP.AttendanceRegisterID
+      INNER JOIN Emp.Employee E ON AR.EmployeeID = E.EmployeeID
+      WHERE AR.InterfaceProcess = 0
+        AND (AR.InTime IS NOT NULL OR AR.OutTime IS NOT NULL)
+        AND (ISNULL(AP.InTimeSource, 0) = 1 OR ISNULL(AP.OutTimeSource, 0) = 1)
+    
+1/16/2025, 3:05:17 PM - Error for AttendanceRegisterID: 
+      SELECT TOP(500) E.CardNumber, E.EmployeeID, AR.AttendanceRegisterID,
+             dbo.fn_ConvertDateTime(AR.AttendanceDate, 1) AS AttendanceDate,
+             'DeviceLogs_' + CAST(MONTH(AR.AttendanceDate) AS VARCHAR(2)) + '_' + CAST(YEAR(AR.AttendanceDate) AS VARCHAR(4)) AS DataTable,
+             dbo.fn_ConvertDateTime(AR.InTime, 3) AS InTime,
+             dbo.fn_ConvertDateTime(AR.OutTime, 3) AS OutTime,
+             ISNULL(AP.InTimeSource, 0) AS InTimeSource,
+             ISNULL(AP.OutTimeSource, 0) AS OutTimeSource
+      FROM Time.AttendanceRegister AR
+      INNER JOIN Time.AttendancePunchDetails AP ON AR.AttendanceRegisterID = AP.AttendanceRegisterID
+      INNER JOIN Emp.Employee E ON AR.EmployeeID = E.EmployeeID
+      WHERE AR.InterfaceProcess = 0
+        AND (AR.InTime IS NOT NULL OR AR.OutTime IS NOT NULL)
+        AND (ISNULL(AP.InTimeSource, 0) = 1 OR ISNULL(AP.OutTimeSource, 0) = 1)
+    

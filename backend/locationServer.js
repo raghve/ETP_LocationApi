@@ -2,6 +2,9 @@ const express = require('express');
 const axios = require('axios');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const swaggerUi = require('swagger-ui-express');
+
+const swaggerSpec = require('./swaggerConfig');
 
 const config = require('./locationApiConfig'); // Import the configuration file
 
@@ -10,6 +13,9 @@ const app = express();
 
 // Enable CORS for all routes
 app.use(cors());
+
+// Swagger setup
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 
 // Use the configuration from locationApiConfig.js
@@ -86,6 +92,45 @@ const basicAuth = (req, res, next) => {
 
 
 // Endpoint for reverse geocoding
+/**
+ * @swagger
+ * /api/getAddress:
+ *   get:
+ *     summary: Retrieve an address 
+ *     description: Fetches address details based on latitude and longitude. Requires Basic Authorization.
+ *     security:
+ *       - basicAuth: []  # Specifies Basic Auth for this endpoint
+ *     parameters:
+ *       - in: query
+ *         name: lat
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Latitude coordinate.
+ *       - in: query
+ *         name: lng
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Longitude coordinate.
+ *     responses:
+ *       200:
+ *         description: Successful response
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 address:
+ *                   type: string
+ *                   example: "123 Main St, Cityville"
+ *       401:
+ *         description: Unauthorized
+ *       500:
+ *         description: Server error
+ */
+
+
 app.get('/api/getAddress', basicAuth, async (req, res) => {
     const { lat, lng } = req.query;
 
@@ -140,8 +185,12 @@ app.get('/api/getAddress', basicAuth, async (req, res) => {
 
 // Default route to display message in the browser
 app.get('/', (req, res) => {
-    res.send(`Location API Server running on port ${PORT}`);
+    res.send(`Location API Server running on http://localhost:${PORT}`);
+    res.send(`Swagger API Documentation available at http://localhost:${PORT}/api-docs`)
 });
 
 // Start the server
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Swagger API documentation available at http://localhost:${PORT}/api-docs`);
+});

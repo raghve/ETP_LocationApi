@@ -27,6 +27,8 @@
     "node-schedule": "^2.1.1",
     "node-windows": "^1.0.0-beta.8",
     "rxjs": "~7.8.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10"
   },
